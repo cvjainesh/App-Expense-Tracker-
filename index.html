@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#145a45">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">to
 <meta name="apple-mobile-web-app-title" content="Build Ledger">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./icon-192.png">
@@ -107,7 +107,7 @@ async function deriveKey(pin,salt){const material=await crypto.subtle.importKey(
 async function encryptRows(rows,key){const iv=randomBytes(12),plain=new TextEncoder().encode(JSON.stringify(rows));const cipher=await crypto.subtle.encrypt({name:"AES-GCM",iv},key,plain);return {iv:toB64(iv),cipher:toB64(new Uint8Array(cipher))};}
 async function decryptRows(blob,key){const plain=await crypto.subtle.decrypt({name:"AES-GCM",iv:fromB64(blob.iv)},key,fromB64(blob.cipher));const data=JSON.parse(new TextDecoder().decode(plain));if(!Array.isArray(data))throw new Error("Invalid vault data");return data;}
 function setStatus(s){$("pinStatus").textContent=s;}
-function showLock(mode,meta){pinMode=mode;vaultMeta=meta;$("app").classList.add("hidden");$("lockScreen").classList.remove("hidden");$("pinForm").reset();$("confirmLabel").classList.toggle("hidden",mode!=="create");$("pinLabel").firstChild.textContent=mode==="create"?"Create a 6-digit PIN":mode==="change"?"Choose a new 6-digit PIN":"Enter your 6-digit PIN";$("lockIntro").textContent=mode==="create"?"Create a PIN to encrypt your local expense database.":"Enter your PIN to unlock your construction records.";$("pinSubmit").textContent=mode==="create"?"Create secure local vault":mode==="change"?"Save new PIN":"Unlock";$("pinInput").value="";$("confirmPin").value="";setStatus("");}
+function showLock(mode,meta){pinMode=mode;vaultMeta=meta;$("app").classList.add("hidden");$("lockScreen").classList.remove("hidden");$("pinForm").reset();$("confirmLabel").classList.toggle("hidden",mode!=="create");$("confirmPin").required = (mode === "create");$("pinLabel").firstChild.textContent=mode==="create"?"Create a 6-digit PIN":mode==="change"?"Choose a new 6-digit PIN":"Enter your 6-digit PIN";$("lockIntro").textContent=mode==="create"?"Create a PIN to encrypt your local expense database.":"Enter your PIN to unlock your construction records.";$("pinSubmit").textContent=mode==="create"?"Create secure local vault":mode==="change"?"Save new PIN":"Unlock";$("pinInput").value="";$("confirmPin").value="";setStatus("");}
 async function initialise(){
  db=await openDB();const meta=await getMeta();
  if(!meta){showLock("create",null);return;}
