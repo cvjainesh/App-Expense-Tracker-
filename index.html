@@ -28,7 +28,7 @@ form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.wide{g
 <section id="lockScreen" class="lock-screen">
   <div class="lock-card">
     <h1>Build Ledger</h1>
-    <p>Private construction expense tracker</p>
+    <p>Construction expense tracker</p>
     <p id="lockIntro">Create a PIN to protect and encrypt your local expense database.</p>
     <form id="pinForm">
       <label id="pinLabel" for="pinInput">Create a 6-digit PIN
@@ -40,14 +40,14 @@ form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.wide{g
       <button id="pinSubmit" type="submit">Create secure local vault</button>
     </form>
     <p id="pinStatus" class="status" role="status"></p>
-    <div class="notice"><strong>Important:</strong> Your PIN encrypts your records on this device. If you forget it, the records cannot be recovered unless you have a CSV backup. This is a local app PIN, not a server account.</div>
+    <div class="notice"><strong>Important:</strong> style="text-align: justify"> Your PIN encrypts your records on this device. If you forget it, the records cannot be recovered unless you have a CSV backup. This is a local app PIN, not a server account.</div>
   </div>
 </section>
 <main id="app" class="hidden">
 <header>
-  <div class="topline"><div><h1>Build Ledger</h1><p class="subtitle">House construction expense tracker </p></div><button id="lockBtn" class="secondary" type="button">Lock</button></div>
+  <div class="topline"><div><h1>Build Ledger</h1><p class="subtitle"> Construction expense tracker </p></div><button id="lockBtn" class="secondary" type="button">Lock</button></div>
 </header>
-<div class="notice"><strong>Local privacy:</strong> Expense records are encrypted and stored in this browser using IndexedDB. Keep CSV backups in a safe place. Clearing website data or removing the app can erase local records.</div>
+<div class="notice"><strong>Local privacy:</strong> style="text-align: justify" Expense records are encrypted and stored in this browser using IndexedDB. Keep CSV backups in a safe place. Clearing website data or removing the app can erase local records.</div>
 <section class="stats" aria-label="Summary">
   <div class="stat"><span>Total recorded expenses</span><strong id="total">₹0</strong></div>
   <div class="stat"><span>Number of entries</span><strong id="count">0</strong></div>
@@ -76,11 +76,11 @@ form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.wide{g
 </section>
 <section class="panel">
 <h2>Backup &amp; security</h2>
-<p>Export CSV regularly. Import adds records to the current database; importing the same file twice may create duplicates.</p>
+<p style="text-align: justify">Export CSV regularly. Import adds records to the current database; importing the same file twice may create duplicates.</p>
 <div class="toolbar"><button id="changePinBtn" class="secondary" type="button">Change PIN</button><button id="deleteAllBtn" class="secondary" type="button">Delete all records</button></div>
 <p class="small" style="text-align: justify">The PIN screen protects normal app access and the database is encrypted with your PIN. A person with technical access to your unlocked device/browser may still be able to inspect app files; do not treat this as protection against a forensic attacker.</p>
 </section>
-<p class="small" style="text-align:center">Build Ledger · ©JCV 2026 · CSV backup recommended</p>
+<p class="small" style="text-align:center">Build Ledger · © JCV 2026</p>
 </main>
 <script>
 "use strict";
