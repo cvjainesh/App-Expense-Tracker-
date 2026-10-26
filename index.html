@@ -40,14 +40,14 @@ form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.wide{g
       <button id="pinSubmit" type="submit">Create secure local vault</button>
     </form>
     <p id="pinStatus" class="status" role="status"></p>
-    <div class="notice"><strong>Important:</strong> style="text-align: justify"> Your PIN encrypts your records on this device. If you forget it, the records cannot be recovered unless you have a CSV backup. This is a local app PIN, not a server account.</div>
+    <div class="notice"> style="text-align: justify"<strong>Important:</strong>Your PIN encrypts your records on this device. If you forget it, the records cannot be recovered unless you have a CSV backup. This is a local app PIN, not a server account.</div>
   </div>
 </section>
 <main id="app" class="hidden">
 <header>
   <div class="topline"><div><h1>Build Ledger</h1><p class="subtitle"> Construction expense tracker </p></div><button id="lockBtn" class="secondary" type="button">Lock</button></div>
 </header>
-<div class="notice"><strong>Local privacy:</strong> style="text-align: justify" Expense records are encrypted and stored in this browser using IndexedDB. Keep CSV backups in a safe place. Clearing website data or removing the app can erase local records.</div>
+<div class="notice"> style="text-align: justify"<strong>Local privacy:</strong> Expense records are encrypted and stored in this browser using IndexedDB. Keep CSV backups in a safe place. Clearing website data or removing the app can erase local records.</div>
 <section class="stats" aria-label="Summary">
   <div class="stat"><span>Total recorded expenses</span><strong id="total">₹0</strong></div>
   <div class="stat"><span>Number of entries</span><strong id="count">0</strong></div>
